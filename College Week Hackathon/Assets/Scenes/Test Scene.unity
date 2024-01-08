@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 127448749}
   - component: {fileID: 127448753}
   - component: {fileID: 127448754}
+  - component: {fileID: 127448755}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -460,6 +461,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 1488557463}
   bulletprefab: {fileID: 5595431795022957791, guid: 1f511005544947d40bd49132382cb8a8, type: 3}
+--- !u!114 &127448755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127448748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffecc32ea8e62648a85af5ecf0cdc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Healthbar: {fileID: 839941951}
+  HealthAmount: 100
 --- !u!1 &158472677
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,8 +487,9 @@ GameObject:
   - component: {fileID: 158472679}
   - component: {fileID: 158472681}
   - component: {fileID: 158472680}
-  - component: {fileID: 158472682}
   - component: {fileID: 158472683}
+  - component: {fileID: 158472684}
+  - component: {fileID: 158472685}
   m_Layer: 0
   m_Name: Enemy #1
   m_TagString: ENEMY
@@ -567,7 +583,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158472677}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -586,8 +602,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &158472682
-CircleCollider2D:
+--- !u!114 &158472683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158472677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3edd0bef556d14bafc171561e6ec03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Quiz: {fileID: 1128770997}
+  player: {fileID: 127448748}
+--- !u!114 &158472684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158472677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade557a2b164cf84785706047e63de85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!61 &158472685
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -598,7 +641,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -618,22 +661,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -4.2927513, y: -0.83181316}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 6
---- !u!114 &158472683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158472677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d3edd0bef556d14bafc171561e6ec03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Quiz: {fileID: 1128770997}
+  m_Size: {x: 9.585503, y: 0.34643233}
+  m_EdgeRadius: 0
 --- !u!1 &167444601
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,6 +2466,35 @@ MonoBehaviour:
   - {fileID: 1539714187}
   - {fileID: 895677116}
   feedbackText: {fileID: 1229113877}
+  quizQuestions:
+  - question: What does C# stand for?
+    choices:
+    - Computer Sharp
+    - C Sharp
+    - Code Sharp
+    - Computer Science
+    correctAnswerIndex: 1
+  - question: Which keyword is commonly used to declare a variable in C#?
+    choices:
+    - var
+    - variable
+    - int
+    - declare
+    correctAnswerIndex: 0
+  - question: Which of the following is a value type in C#?
+    choices:
+    - string
+    - int
+    - array
+    - declare
+    correctAnswerIndex: 1
+  - question: How do you declare a character variable in C#?
+    choices:
+    - char myChar;
+    - character myChar;
+    - var myChar = 'a';
+    - myChar = 'a';
+    correctAnswerIndex: 0
 --- !u!1 &1121203026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,7 +3310,7 @@ Transform:
   m_GameObject: {fileID: 1488557462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.58, y: 0.93, z: 0}
+  m_LocalPosition: {x: -1.68, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3272,7 +3341,7 @@ Transform:
   m_GameObject: {fileID: 1524840713}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 0.61, z: 0.09789896}
+  m_LocalPosition: {x: -1.33, y: -0.06, z: 0.09789896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4829,7 +4898,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2029764907}
-  - component: {fileID: 2029764908}
   m_Layer: 0
   m_Name: Health(whole
   m_TagString: Untagged
@@ -4859,20 +4927,6 @@ RectTransform:
   m_AnchoredPosition: {x: -725, y: 468}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2029764908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029764906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffecc32ea8e62648a85af5ecf0cdc41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Healthbar: {fileID: 839941951}
-  HealthAmount: 113.5
 --- !u!1 &2034704507
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class QuizQuestion
+{
+    public string question;
+    public string[] choices;
+    public int correctAnswerIndex; // Index of the correct answer in the choices array
+}
+
 public class QuizManager : MonoBehaviour
 {
     public GameObject Weapon;
@@ -11,19 +19,10 @@ public class QuizManager : MonoBehaviour
     public Button[] answerButtons;
     public Text feedbackText;
 
+    [SerializeField]
+    private List<QuizQuestion> quizQuestions = new List<QuizQuestion>();
+
     private List<int> questionOrder; // Use a list to store the order of questions
-
-    private string[] questions = {
-        "Question 1: What is the capital of France?",
-        "Question 2: What is the largest planet in our solar system?",
-        "Question 3: Who wrote 'Romeo and Juliet'?"
-    };
-
-    private string[][] choices = {
-        new string[] { "Paris", "Berlin", "Madrid", "Rome" },
-        new string[] { "Earth", "Mars", "Jupiter", "Saturn" },
-        new string[] { "William Shakespeare", "Jane Austen", "Charles Dickens", "Mark Twain" }
-    };
 
     private int currentQuestion = 0;
     private int correctAnswers = 0;
@@ -38,7 +37,7 @@ public class QuizManager : MonoBehaviour
     {
         // Initialize the questionOrder list with shuffled indices
         questionOrder = new List<int>();
-        for (int i = 0; i < questions.Length; i++)
+        for (int i = 0; i < quizQuestions.Count; i++)
         {
             questionOrder.Add(i);
         }
@@ -64,11 +63,11 @@ public class QuizManager : MonoBehaviour
         feedbackText.text = ""; // Clear previous feedback
 
         int questionIndex = questionOrder[currentQuestion];
-        questionText.text = questions[questionIndex];
+        questionText.text = quizQuestions[questionIndex].question;
 
         for (int i = 0; i < answerButtons.Length; i++)
         {
-            answerButtons[i].GetComponentInChildren<Text>().text = choices[questionIndex][i];
+            answerButtons[i].GetComponentInChildren<Text>().text = quizQuestions[questionIndex].choices[i];
 
             int buttonIndex = i; // To capture the correct index in the lambda expression
             answerButtons[i].onClick.RemoveAllListeners();
@@ -81,9 +80,10 @@ public class QuizManager : MonoBehaviour
         Weapon Weapons = Weapon.GetComponent<Weapon>();
         EnemyWeapon Weapons2 = EnemyWeapon.GetComponent<EnemyWeapon>();
         int questionIndex = questionOrder[currentQuestion];
-        string selectedAnswer = choices[questionIndex][choiceIndex];
+        string selectedAnswer = quizQuestions[questionIndex].choices[choiceIndex];
 
-        string correctAnswer = GetCorrectAnswer(questionIndex);
+        int correctAnswerIndex = quizQuestions[questionIndex].correctAnswerIndex;
+        string correctAnswer = quizQuestions[questionIndex].choices[correctAnswerIndex];
 
         if (selectedAnswer == correctAnswer)
         {
@@ -99,7 +99,7 @@ public class QuizManager : MonoBehaviour
 
         currentQuestion++;
 
-        if (currentQuestion < questions.Length)
+        if (currentQuestion < quizQuestions.Count)
         {
             ShowQuestion();
         }
@@ -109,14 +109,9 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    string GetCorrectAnswer(int questionIndex)
-    {
-        return choices[questionIndex][0];
-    }
-
     void DisplayQuizResults()
     {
         questionText.text = "Quiz Completed!";
-        feedbackText.text = "You got " + correctAnswers + " out of " + questions.Length + " questions correct.";
+        feedbackText.text = "You got " + correctAnswers + " out of " + quizQuestions.Count + " questions correct.";
     }
 }
