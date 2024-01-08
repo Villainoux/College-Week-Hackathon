@@ -701,11 +701,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: b9e7ec8a-31eb-4707-97d4-fb9fcb379d03
+  cloudProjectId: db75485f-d267-4b2d-b40f-33a865aeaad1
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Hackaton_project
-  organizationId: danieljohnllara
+  projectName: College Week Hackathon
+  organizationId: owens5289
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
