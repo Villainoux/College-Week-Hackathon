@@ -10,7 +10,9 @@ public class NextSceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        }   
     }
 
     public void LoadNextLevel() {

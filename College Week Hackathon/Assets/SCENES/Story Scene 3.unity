@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b05240c23ef92ab40b841a150c2dbc7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 454769a76727e4e45879c7effef260f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -392,10 +392,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1912457902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -16.067}
-  m_SizeDelta: {x: 1507.9634, y: 191.1999}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &930882458
 MonoBehaviour:
@@ -434,21 +434,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4619f73833588924b9ce288d59730109, type: 3}
-    m_FontSize: 43
+    m_FontSize: 111
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 72
-    m_Alignment: 0
+    m_MinSize: 4
+    m_MaxSize: 113
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: In a world reminiscent of ours, where technology and innovation reigned
-    supreme, Nova, a skilled programmer and archery enthusiast, found herself inexplicably
-    transported to an alternate reality. This realm, known as CodeVerse, was a vast
-    and intricate landscape governed by the principles of programming.
+  m_Text: WHERE AM I?
 --- !u!222 &930882460
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -572,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f0477b29561d04bbe794cb9c99e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 1286916160}
+  transition: {fileID: 0}
   transitionTime: 1
 --- !u!1001 &1286916159
 PrefabInstance:
@@ -635,11 +632,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f7e41ef14d39144b9e6c20b42474ff, type: 3}
---- !u!95 &1286916160 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4155439707499689126, guid: 22f7e41ef14d39144b9e6c20b42474ff, type: 3}
-  m_PrefabInstance: {fileID: 1286916159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912457901
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +668,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -367.40454}
-  m_SizeDelta: {x: 1656.412, y: 223.333}
+  m_SizeDelta: {x: 751.3566, y: 223.333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912457903
 MonoBehaviour:

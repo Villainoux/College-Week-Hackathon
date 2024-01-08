@@ -434,10 +434,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4619f73833588924b9ce288d59730109, type: 3}
-    m_FontSize: 43
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 72
     m_Alignment: 0
     m_AlignByGeometry: 1
@@ -445,10 +445,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: In a world reminiscent of ours, where technology and innovation reigned
-    supreme, Nova, a skilled programmer and archery enthusiast, found herself inexplicably
-    transported to an alternate reality. This realm, known as CodeVerse, was a vast
-    and intricate landscape governed by the principles of programming.
+  m_Text: Nova soon discovered that she was chosen to embark on a quest to restore
+    balance to CodeVerse. The Code Crystal, a symbol of programming harmony, had
+    been fractured, causing a disruption that threatened the very fabric of this
+    digital dimension. Armed only with her bow and her programming knowledge, Nova
+    set out on an isekai adventure like no other.
 --- !u!222 &930882460
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -572,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f0477b29561d04bbe794cb9c99e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 1286916160}
+  transition: {fileID: 0}
   transitionTime: 1
 --- !u!1001 &1286916159
 PrefabInstance:
@@ -635,11 +636,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f7e41ef14d39144b9e6c20b42474ff, type: 3}
---- !u!95 &1286916160 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4155439707499689126, guid: 22f7e41ef14d39144b9e6c20b42474ff, type: 3}
-  m_PrefabInstance: {fileID: 1286916159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912457901
 GameObject:
   m_ObjectHideFlags: 0
